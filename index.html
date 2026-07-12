@@ -28,7 +28,7 @@
 
   <section class="main-content">
     <h1 id="">
-      <center>Towards Unified Song Generation and Singing Voice Conversion with Accompaniment Co-Generation</center>
+      <center>DiTAR+: Dual Optimization for Robust Autoregressive Diffusion Speech Synthesis</center>
     </h1>
 
     <!-- <center> Hanzhao Li<sup>1</sup>, Liumeng Xue<sup>2</sup>, Haohan Guo<sup>3</sup>, Xinfa Zhu<sup>1</sup>, Yuanjun Lv<sup>1</sup>,  Lei Xie<sup>1</sup> </center>
@@ -44,24 +44,29 @@
     <h2>0. Contents</h2>
     <ol>
       <li><a href="#abstract">Abstract</a></li>
-      <li><a href="#Ablation">Samples on Song Generation </a></li>
-      <li><a href="#Reconstruction">Samples on Sing Voice Conversion with Accompaniment</a></li>
+      <li><a href="#Ablation">Samples on Test-ZH and Test-EN</a></li>
+      <li><a href="#Reconstruction">Samples on ZH-Hard and ZH-long</a></li>
       <!-- <li><a href="#TTS">Audio Samples: VALL-E Zero-shot TTS based on differenct codecs </a></li> -->
     </ol>
 
     <br><br>
     <h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
-    <p> While song generation and singing voice conversion (SVC) have evolved significantly, they have long been developed isolated: the former lacks zero-shot speaker cloning, while the latter overlooks vocal-accompaniment synergy. To bridge this gap, we propose UniSinger, the first end-to-end framework unifying speaker cloning song generation and accompaniment co-generation SVC. Building on the multimodal diffusion transformer, we construct a unified speaker embedding space transferring speaker representation from SVC to song generation, endowing fine-grained cross-task timbre control. To mitigate multi-task optimization conflicts, we design a curriculum learning strategy using task-specific modality masking to guide the model to gradually master the generative mechanisms among semantic content, vocal timbre, and accompaniment. Experiments demonstrate state-of-the-art performance on both tasks and realizes complementary benefits, offering new possibilities for intelligent music production.
+    <p> Continuous-latent Autoregressive Diffusion Transformer (AR-DiT) models have demonstrated immense potential in zero-shot speech generation. 
+Among them, DiTAR leverages continuous latent representations and autoregressive diffusion modeling to achieve high-fidelity and expressive speech synthesis.
+However, DiTAR still suffers from limited decoding stability when synthesizing long utterances or complex transcriptions. This instability primarily stems from a restricted historical receptive field and an acoustic inertia dependency within the diffusion decoder, which causes the model to ignore semantic conditions.
+To address these challenges, we propose DiTAR+, a dual-optimization framework for DiTAR-like AR-DiT models. First, we introduce Dilated Context Sampling to expand the macro-level historical receptive field without violating physical temporal continuity, thereby preventing cumulative error propagation. 
+Second, we propose Hierarchical Attention Masking to prevent shallow layers from attending to acoustic pre-context, explicitly decoupling semantic alignment from acoustic detail reconstruction.
+Extensive experiments demonstrate that our framework effectively mitigates pronunciation errors and semantic hallucinations, enhances generation robustness on challenging sentences, and maintains exceptionally high speaker similarity throughout the entirety of long-form utterances.
     </p>
 
     <!-- <br><br> -->
 
-    <center><img src='111.png' style="width: auto;height: auto;max-width: 80%;"></center>
-    <div align="center"><b>Fig.1</b> The architecture of UniSinger.</div>
+    <center><img src='figure.png' style="width: auto;height: auto;max-width: 80%;"></center>
+    <div align="center"><b>Fig.1</b> The architecture of DiTAR+.</div>
 
     <!-- <br><br> -->
 
-    <h2 id="Ablation">2. Samples on Song Generation <a name="Ablation"></a></h2>
+    <h2 id="Ablation">2. Samples on Test-ZH and Test-EN <a name="Ablation"></a></h2>
 
     <style>
       table {
