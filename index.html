@@ -45,7 +45,7 @@
     <ol>
       <li><a href="#abstract">Abstract</a></li>
       <li><a href="#Ablation">Samples on Test-ZH and Test-EN</a></li>
-      <li><a href="#Reconstruction">Samples on ZH-Hard and ZH-long</a></li>
+      <li><a href="#Reconstruction">Samples on ZH-Hard and ZH-Long</a></li>
       <!-- <li><a href="#TTS">Audio Samples: VALL-E Zero-shot TTS based on differenct codecs </a></li> -->
     </ol>
 
@@ -61,7 +61,7 @@ Extensive experiments demonstrate that our framework effectively mitigates pronu
 
     <!-- <br><br> -->
 
-    <center><img src='figure.png' style="width: auto;height: 50%;max-width: 60%;"></center>
+    <center><img src='figure.png' style="width: auto;height: 80%;max-width: 70%;"></center>
     <div align="center"><b>Fig.1</b> The architecture of DiTAR+.</div>
 
     <!-- <br><br> -->
@@ -92,130 +92,127 @@ Extensive experiments demonstrate that our framework effectively mitigates pronu
     <table>
   <thead>
     <tr>
-      <th style="text-align: center;">Instruction</th>
-      <th style="text-align: center;">Transcript</th>
-      <th style="text-align: center;">Reference Audio</th>
-      <th style="text-align: center;">Synthesis Audio</th>
+      <th style="text-align: center;">Prompt</th>`
+      <!-- <th style="text-align: center;">Ground Truth</th> -->
+      <th style="text-align: center;">CosyVoice2</th>
+      <th style="text-align: center;">F5TTS</th>
+      <th style="text-align: center;">DiTAR</th>
+      <th style="text-align: center;">DiTAR+</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left; vertical-align: middle;">
-        <b>genre:</b> The genre of music is hip hop.<br><br>
-        <b>instrumentation:</b> The instruments used in the music piece include a drum machine, a synthesizer, and a bass guitar.<br><br>
-        <b>singer:</b> The music is performed by one singer. The singer is male, in his 20s, with a confident and energetic tone.<br><br>
-        <b>rhythm and melody:</b> The tempo is 100 BPM, and the key signature is G major. The melody is characterized by a strong, rhythmic beat and a catchy, repetitive hook.<br><br>
-        <b>mood and atmosphere:</b> The music feels like a lively, upbeat party scene. The combination of the confident male vocals, the driving drum machine beat, and the catchy synth melody creates a sense of excitement and energy, as if the singer is inviting the listener to join in the fun."</td>
-      <td style="text-align: left; vertical-align: middle;">I thought I better hurry up before I busted a groove. I leaned down to kiss her but then out of the blue. A door slammed and a voice said baby where are you.</td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/song/1_ref.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/4_prompt.flac" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/song/1.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/4_cv.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/4_f5.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/4_ditar.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/4_gt.wav" type="audio/wav"></audio>
       </td>
     </tr>
     
     <tr>
-      <td style="text-align: left; vertical-align: middle;">
-        <b>genre:</b> The genre of music is soul and blues.<br><br>
-        <b></b>instrumentation:</b> The instruments used in the music piece include a guitar, a bass, a piano, and a drum set.<br><br>
-        <b>singer:</b> The music is performed by one singer. The singer is a male in his 40s. The tone of the singer is soulful and emotional.<br><br>
-        <b>rhythm and melody:</b> The tempo is moderate, around 75 BPM. The key signature is F minor.<br><br>
-        <b>mood and atmosphere:</b> The music evokes a sense of melancholy and introspection. The soulful guitar riffs and the bluesy piano chords create a somber atmosphere, while the singer's emotional tone adds a layer of vulnerability and longing. The overall mood is reminiscent of a rainy day, with the music acting as a soothing balm for the listener's soul.</td>
-      <td style="text-align: left; vertical-align: middle;">What you let me do? what I want to you?</td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/song/3_ref.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/5_p.flac" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/song/3.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/5_f5.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/5_d.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/5_di+.wav" type="audio/wav"></audio>
+      </td>
+            <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/5_gt.wav" type="audio/wav"></audio>
+      </td>
+    </tr>
+    
+    <tr>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/6_p.flac" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/6_f5.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/6_d.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/6_d+.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/6_g.wav" type="audio/wav"></audio>
       </td>
     </tr>
 
     <tr>
-      <td style="text-align: left; vertical-align: middle;">
-      <b>genre:</b> The genre of music is traditional Chinese.<br><br>
-      <b>instrumentation:</b> The instruments used in the music piece include a guzheng, a dizi, and a yangqin.<br><br>
-      <b>singer:</b> The music is performed by one female singer. The singer is in her 40s with a soft and melodic tone.<br><br>
-      <b>rhythm and melody:</b> The tempo is moderate, and the key signature is B major. The melody is soothing and harmonious.<br><br>
-      <b>mood and atmosphere:</b> The music evokes a sense of tranquility and elegance, reminiscent of a serene garden on a quiet afternoon. The gentle strumming of the guzheng, the delicate notes of the dizi, and the soft plucking of the yangqin create a peaceful and reflective atmosphere, perfect for relaxation or meditation.</td>
-      <td style="text-align: left; vertical-align: middle;">不要陶醉梦境美.</td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/song/2_1_ref.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/7_p.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/song/2_1.wav" type="audio/wav"></audio>
-      </td>
-    </tr>
-
-
-    <tr>
-      <td style="text-align: left; vertical-align: middle;">
-        <b>genre:</b> The genre of music is classical.<br><br>
-        <b>instrumentation:</b> The instruments used in the music piece include a piano and a female voice.<br><br>
-        <b>singer:</b> The music is performed by one singer. The singer is a female in her late teens to early twenties. Her tone is soft and ethereal.<br><br>
-        <b>rhythm and melody:</b> The tempo is moderate, with a steady and flowing rhythm. The key signature is D major.<br><br>
-        <b>mood and atmosphere:</b> The music evokes a sense of tranquility and introspection. The soft piano and the ethereal female voice create a dreamlike atmosphere, as if the listener is floating on a cloud. The combination of the gentle melody and the subtle dynamics of the performance invite the listener to lose themselves in a peaceful and reflective state.</td>
-      <td style="text-align: left; vertical-align: middle;">Restless heart beats so imperfectly.</td>
-      <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/song/6_ref.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/7_cv.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/song/6.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/7_f5.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/7_d.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/7_d+.wav" type="audio/wav"></audio>
       </td>
     </tr>
 
     <tr>
-      <td style="text-align: left; vertical-align: middle;">
-        <b>genre:</b> The genre of music is classical.<br><br>
-        <b>instrumentation:</b> The instruments used in the music piece include a piano and a choir.<br><br>
-        <b>singer:</b> The music is performed by one singer. The singer is a male in his 30s. The tone of the singer is passionate and emotive.<br><br>
-        <b>rhythm and melody:</b> The tempo is moderate, with a steady and flowing rhythm. The key signature is A major.<br><br>
-        <b>mood and atmosphere:</b> The music evokes a sense of reverence and solemnity. The combination of the piano's gentle melody and the choir's harmonious voices creates a profound and uplifting atmosphere, reminiscent of a spiritual or ceremonial moment.</td>
-      <td style="text-align: left; vertical-align: middle;"> 哦亲爱的党,为了民族的兴旺</td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/song/4_ref.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/1_p.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/song/4.wav" type="audio/wav"></audio>
-      </td>
-    </tr>
-
-    <tr>
-      <td style="text-align: left; vertical-align: middle;">
-        <b>genre:</b> The genre of music is pop.<br><br>
-        <b>instrumentation:</b> The instruments used in the music piece include a piano, synthesizer, and a drum machine.<br><br>
-        <b>singer:</b> The music is performed by one female singer. The singer is in her 20s, and her tone is soft and melodic.<br><br>
-        <b>rhythm and melody:</b> The tempo is moderate, around 170.0 bpm. The key signature is A minor.<br><br>
-        <b>mood and atmosphere:</b> The music evokes a sense of nostalgia and melancholy. The soft piano and electric guitar create a dreamy, ethereal atmosphere, while the drum machine adds a subtle, rhythmic foundation. The singer's tone, combined with the overall arrangement, conveys a feeling of longing and introspection.</td>
-      <td style="text-align: left; vertical-align: middle;">醉人的香味,谁能了解?</td>
-      <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/song/5_1_ref.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/1_d+.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/song/5_1.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/1_1.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/1_d.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/1.wav" type="audio/wav"></audio>
       </td>
     </tr>
 
     <tr>
-      <td style="text-align: left; vertical-align: middle;">
-        <b>genre:</b> The genre of music is pop.<br><br>
-        <b>instrumentation:</b> The instruments used in the music piece include a piano, electric guitar, and a drum set.<br><br>
-        <b>singer:</b> The music is performed by one singer. The singer is male, in his 30s, with a smooth and melodic tone.<br><br>
-        <b>rhythm and melody:</b> The tempo is moderate, around 140 BPM, and the key signature is F minor.<br><br>
-        <b>mood and atmosphere:</b> The music evokes a sense of longing and introspection, with the singer's smooth voice and the gentle strumming of the guitar creating a melancholic yet hopeful atmosphere.</td>
-      <td style="text-align: left; vertical-align: middle;">你的心,近在天边,却离我,那么远.</td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/song/7_ref.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/2_p.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/song/7.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/2_cv.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/2_f5.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/2_d.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/2_d+.wav" type="audio/wav"></audio>
       </td>
     </tr>
 
   </tbody>
 </table>
 
-      <h2 id="Reconstruction">3. Samples on Sing Voice Conversion <a name="Reconstruction"></a></h2>
+      <h2 id="Reconstruction">3. Samples on ZH-Hard and ZH-Long <a name="Reconstruction"></a></h2>
 
       <style>
       table {
@@ -241,142 +238,117 @@ Extensive experiments demonstrate that our framework effectively mitigates pronu
     <table>
   <thead>
     <tr>
-      <th style="text-align: center;">Instruction</th>
-      <th style="text-align: center;">Source Audio</th>
-      <th style="text-align: center;">Reference Audio</th>
-      <th style="text-align: center;">Synthesis Audio</th>
+      <th style="text-align: center;">Prompt</th>
+      <th style="text-align: center;">CosyVoice2</th>
+      <th style="text-align: center;">F5TTS</th>
+      <th style="text-align: center;">DiTAR</th>
+      <th style="text-align: center;">DiTAR+</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td style="text-align: left; vertical-align: middle;">
-        <b>genre:</b> The genre of music is hip hop.<br><br>
-        <b>instrumentation:</b> The instruments used in the music piece include a drum machine, a synthesizer, and a bass guitar.<br><br>
-        <b>rhythm and melody:</b> The tempo is 100 BPM, and the key signature is G major. The melody is characterized by a strong, rhythmic beat and a catchy, repetitive hook.<br><br>
-        <b>mood and atmosphere:</b> The music feels like a lively, upbeat party scene. The combination of the confident male vocals, the driving drum machine beat, and the catchy synth melody creates a sense of excitement and energy, as if the singer is inviting the listener to join in the fun."</td>
-      <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/1_source.wav" type="audio/wav"></audio>
-      </td>
-      <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/1_tar.wav" type="audio/wav"></audio>
-      </td>
-      <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/1_syn.wav" type="audio/wav"></audio>
-      </td>
-    </tr>
-    
-     <tr>
-      <td style="text-align: left; vertical-align: middle;">
-        <b>genre:</b> The genre of music is pop.<br><br>
-        <b>instrumentation:</b> The instruments used in the music piece include a piano, synthesizer, and electric guitar.<br><br>
-        <b>rhythm and melody:</b>  The tempo is moderate, around 140 BPM, and the key signature is F minor.<br><br>
-        <b>mood and atmosphere:</b> The music evokes a sense of longing and melancholy, with the singer's smooth voice and the soft, dreamy instrumentation creating a reflective and emotional atmosphere.</td>
-      <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/3_source.wav" type="audio/wav"></audio>
-      </td>
-      <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/3_tar.wav" type="audio/wav"></audio>
-      </td>
-      <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/3_syn.wav" type="audio/wav"></audio>
-      </td>
-    </tr>
 
-    
     <tr>
-      <td style="text-align: left; vertical-align: middle;">
-        <b>genre:</b> The genre of music is pop.<br><br>
-        <b>instrumentation:</b> The instruments used in the music piece include a guitar, a bass, and a drum.<br><br>
-        <b>rhythm and melody:</b>  The tempo is 134.033 bpm. The key signature is D major.<br><br>
-        <b>mood and atmosphere:</b> The music feels like a heartfelt confession, with the singer's emotional tone and the soft, melodic guitar and bass creating a sense of vulnerability and longing.</td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/4_source.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/1_l_p.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/4_tar.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/1_l_cv.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/4_syn.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/1_l_f5.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/1_l_d.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/1_l_d+.wav" type="audio/wav"></audio>
       </td>
     </tr>
 
     <tr>
-      <td style="text-align: left; vertical-align: middle;">
-        <b>genre:</b> The genre of music is pop.<br><br>
-        <b>instrumentation:</b> The instruments used in the music piece include a guitar, a keyboard, and a drum set.<br><br>
-        <b>rhythm and melody:</b>  The tempo is moderate, around 100 BPM, and the key signature is Bb major.<br><br>
-        <b>mood and atmosphere:</b> The music creates a warm and nostalgic atmosphere, evoking feelings of love and longing. The soft guitar strums and gentle keyboard melodies blend harmoniously, accompanied by the rhythmic drum beats, to create a soothing and intimate listening experience.</td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/5_source.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/2_l_p.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/5_tar.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/2_l_cv.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/5_syn.wav" type="audio/wav"></audio>
-      </td>
-    </tr>
-
-    
-    <tr>
-      <td style="text-align: left; vertical-align: middle;">
-        <b>genre:</b> The genre of music is classical.<br><br>
-        <b>instrumentation:</b> The instruments used in the music piece include a piano, strings, and a choir.<br><br>
-        <b>rhythm and melody:</b> The tempo is moderate, with a steady and flowing rhythm. The key signature is F minor.<br><br>
-        <b>mood and atmosphere:</b> The music evokes a sense of tranquility and introspection. The soft piano melodies, combined with the gentle strings and choir, create a serene and reflective atmosphere, reminiscent of a peaceful countryside village.</td>
-      <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/6_source.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/2_l_f5.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/6_tar.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/2_l_d.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/6_syn.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/2_l_d+.wav" type="audio/wav"></audio>
       </td>
     </tr>
 
+
     <tr>
-      <td style="text-align: left; vertical-align: middle;">
-        <b>genre:</b> The genre of music is hip hop.<br><br>
-        <b>instrumentation:</b> The instruments used in the music piece include a prominent drum beat, a bassline, and a synthesizer.<br><br>
-        <b>rhythm and melody:</b> The tempo is moderate, around 90 BPM, with a steady and driving rhythm. The key signature is A minor.<br><br>
-        <b>mood and atmosphere:</b> The music feels energetic and upbeat, with a sense of confidence and determination. The combination of the rhythmic drum beat, the smooth bassline, and the confident vocal delivery creates an atmosphere of empowerment and ambition.</td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/7_source.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/3_l_p.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/7_tar.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/3_l_cv.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/7_syn.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/3_l_f5.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/3_l_d.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/3_l_d+.wav" type="audio/wav"></audio>
       </td>
     </tr>
 
     <tr>
-      <td style="text-align: left; vertical-align: middle;">
-        <b>genre:</b> The genre of music is hip-hop.<br><br>
-        <b>instrumentation:</b> The instruments used in the music piece include a prominent bassline, rhythmic drums, and a synthesizer.<br><br>
-        <b>rhythm and melody:</b> The tempo is moderate, around 140 BPM, with a steady beat that drives the rhythm. The key signature is C minor, giving the music a somber yet energetic feel.<br><br>
-        <b>mood and atmosphere:</b> The music creates a gritty, urban atmosphere, evoking the hustle and bustle of city life. The combination of the smooth vocal delivery, the driving bassline, and the rhythmic drums work together to convey a sense of determination and resilience, as if the singer is navigating through the challenges of life with a cool, collected demeanor.</td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/8_source.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/4_l_p.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/8_tar.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/4_l_cv.wav" type="audio/wav"></audio>
       </td>
       <td style="text-align: center; vertical-align: middle;">
-        <audio controls><source src="demos/svc/8_syn.wav" type="audio/wav"></audio>
+        <audio controls><source src="demos/4_l_f5.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/4_l_d.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/4_l_d+.wav" type="audio/wav"></audio>
       </td>
     </tr>
 
-
+    <tr>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/5_l_p.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/5_l_cv.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/5_l_f5.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/5_l_d.wav" type="audio/wav"></audio>
+      </td>
+      <td style="text-align: center; vertical-align: middle;">
+        <audio controls><source src="demos/5_l_d+.wav" type="audio/wav"></audio>
+      </td>
+    </tr>
 
 
 
   </tbody>
-</table>
+    </table>
 
-        
+   
+
+
+
+
+
     <footer class="site-footer">
 
       <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com/">GitHub
